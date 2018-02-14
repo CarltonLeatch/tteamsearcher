@@ -3,3 +3,51 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+.GameContainer{
+  margin-top: 0% ;
+}
+
+header{
+  display: block;
+  width: 100%;
+  background: black;
+  color: white;
+  height: 94px;
+}
+
+.logo{
+  position: absolute;
+  top: 6%; left: 15px;
+  margin-left: 10px;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
+
+}
+nav,
+nav ul,
+nav ul li {
+  margin: 0;
+  padding: 0;
+}
+nav{
+  position: absolute;
+  top: 5%; right: 25px;
+  @include translateY(-50%);
+}
+
+ul li {
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 10px;
+
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 5px;
+  font-size: 19px;
+  color: white !important;
+}
+

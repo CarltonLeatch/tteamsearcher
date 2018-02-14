@@ -16,9 +16,7 @@ public class PlayerRestController {
 
 
     @GetMapping
-    public Iterable<Player> getAll(){
-        return playerRepository.findUsernameAndPasswordOnly();
-    }
+    public Iterable<Player> getAll(){ return playerRepository.findUsernameAndPasswordOnly(); }
 
     @GetMapping("/{idPlayer}")
     public Player getOne(@PathVariable("idPlayer")Long id){
