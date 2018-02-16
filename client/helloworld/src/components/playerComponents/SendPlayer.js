@@ -28,7 +28,7 @@ class SendPlayer extends Component {
 
     render(){
         return(
-            <div>
+
             <div class = "AddPlayerContainer">
                 <br/>
                 <div class="form-group">
@@ -39,7 +39,7 @@ class SendPlayer extends Component {
                     <div class = 'col-sm-10'><input class = "btn-danger" type = "button" value = "Search" onClick={this.post.bind(this)} /></div>
                 </div>
             </div>
-            </div>        );
+        );
     }
 }
 

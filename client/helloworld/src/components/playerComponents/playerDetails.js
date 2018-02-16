@@ -4,12 +4,8 @@ import {
     Route,
     Link
 } from 'react-router-dom';
-import playerDetails from "./playerDetails";
 
-
-class getAllPlayers extends Component {
-
-
+class playerDetails extends Component{
 
     constructor(){
         super();
@@ -21,7 +17,9 @@ class getAllPlayers extends Component {
 
     componentDidMount() {
 
-        fetch('http://localhost:8080/api/players')
+       // console.log(this.props.params.idPlayer);
+
+        fetch('http://localhost:8080/api' + this.props.location.pathname)
             .then(res => res.json())
             .then(res => {
                 this.setState({
@@ -33,28 +31,19 @@ class getAllPlayers extends Component {
             });
 
 
-            this.interval = setInterval(() => {
-                fetch('http://localhost:8080/api/players')
-                    .then(res => res.json())
-                    .then(res => {
-                        this.setState({
-                            products: res
-                        });
-                    })
-                    .catch(error => {
-                        console.log(error)
-                    })
-            }, 10000);
-
-        }
+    }
 
     render(){
+        let products = this.state.products;
         return(
+
+
+
             <div class = "GameContainer">
                 <br/>
                 <h3>Player List</h3>
                 <br/>
-                Product filter <input type = "text" class = "filter" placeholder="Search" ref = "filter" onChange={this.search}/>
+
                 <table class = "table">
                     <thead>
                     <tr>
@@ -65,21 +54,18 @@ class getAllPlayers extends Component {
                     </tr>
                     </thead>
                     <tbody>
-
-                    {this.state.products.map(function(p){
+                        <tr>
+                        {Object.keys(products).map(function(idPlayer){
                         return(
 
-                            <tr>
 
-                                <td class = "link"><Link to ={'/players/' + p.idPlayer}> ID :{p.idPlayer}</Link></td>
-                                <td>{p.username}</td>
-                                <td>{p.password}</td>
-                            </tr>
+                                <td class = "link">{products[idPlayer]}</td>
+
 
                         )
 
                     })}
-
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -87,7 +73,4 @@ class getAllPlayers extends Component {
         );
     }
 }
-
-
-
-export default getAllPlayers;
+export default playerDetails;

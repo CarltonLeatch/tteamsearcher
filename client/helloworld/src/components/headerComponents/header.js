@@ -6,6 +6,7 @@ class Header extends Component{
     render(){
         return(
             <header>
+
                 <div className="logo">
                 Logo
                 </div>
@@ -15,7 +16,7 @@ class Header extends Component{
                             <Link to="/">Home</Link>
                         </li>
                         <li>
-                            <Link to="/getAll">Get All</Link>
+                            <Link to="/players">Get All</Link>
                         </li>
                     </ul>
                 </nav>
