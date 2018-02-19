@@ -36,12 +36,12 @@ public class Player {
     @NotEmpty
     private String email;
 
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @OneToMany
+    //@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Game> games;
 
 
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @ManyToMany
+   // @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<Message> messages;
 }

@@ -18,6 +18,9 @@ class Header extends Component{
                         <li>
                             <Link to="/players">Get All</Link>
                         </li>
+                        <li>
+                            <Link to = "/Addons">Send Message</Link>
+                        </li>
                     </ul>
                 </nav>
             </header>

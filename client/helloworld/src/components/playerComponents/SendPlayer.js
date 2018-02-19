@@ -35,8 +35,8 @@ class SendPlayer extends Component {
                     <label class = 'form-control-label col-sm-2' >username: </label> <div class = 'col-sm-10'> <input type = "text" ref = "username"/> </div>
                     <label class = 'form-control-label col-sm-2' >password </label><div class = 'col-sm-10'><input type = "text" ref = "password"/></div>
                     <label class = 'form-control-label col-sm-2' >email </label> <div class = 'col-sm-10'><input type = "text" ref = "email"/> </div>
-
-                    <div class = 'col-sm-10'><input class = "btn-danger" type = "button" value = "Search" onClick={this.post.bind(this)} /></div>
+                <br/>
+                    <div class = 'col-sm-10'><input class = "btn-danger" type = "button" value = "Dodaj" onClick={this.post.bind(this)} /></div>
                 </div>
             </div>
         );

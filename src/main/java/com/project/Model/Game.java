@@ -28,5 +28,7 @@ public class Game {
     @NotEmpty
     private String acronim;
 
+    @OneToMany
+    private List<Form> forms;
 
 }

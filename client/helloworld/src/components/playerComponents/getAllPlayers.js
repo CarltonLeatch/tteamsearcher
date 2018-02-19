@@ -58,7 +58,7 @@ class getAllPlayers extends Component {
                 <table class = "table">
                     <thead>
                     <tr>
-                        <th>id</th>
+                        <th>ID(Clickable)</th>
                         <th scope = "col">username</th>
                         <th>password</th>
 
@@ -71,7 +71,7 @@ class getAllPlayers extends Component {
 
                             <tr>
 
-                                <td class = "link"><Link to ={'/players/' + p.idPlayer}> ID :{p.idPlayer}</Link></td>
+                                <td class = "link"><Link class = "link" to ={'/players/' + p.idPlayer}>{p.idPlayer}</Link></td>
                                 <td>{p.username}</td>
                                 <td>{p.password}</td>
                             </tr>

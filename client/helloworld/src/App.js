@@ -18,6 +18,8 @@ import Header from './components/headerComponents/header';
 import GetAllPlayers from './components/playerComponents/getAllPlayers';
 import SendPlayer from './components/playerComponents/SendPlayer';
 import playerDetails from "./components/playerComponents/playerDetails";
+import sendMessage from "./components/messageComponents/sendMessage";
+import saveGame from "./components/gameComponents/saveGame";
 
 class Player extends Component {
 
@@ -29,6 +31,8 @@ class Player extends Component {
            <div class = "App">
                <Header/>
                <Route exact path='/' component = {SendPlayer}/>
+               <Route to path='/Addons' component = {saveGame} />
+                <Route to path = '/Addons' component = {sendMessage}/>
                <Route path = "/players/:idPlayer" component = {playerDetails}/>
                <Route exact path='/players' component = {GetAllPlayers}/>
 
