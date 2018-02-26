@@ -32,8 +32,8 @@ class Player extends Component {
                <Header/>
                <Route exact path='/' component = {SendPlayer}/>
                <Route to path='/Addons' component = {saveGame} />
-                <Route to path = '/Addons' component = {sendMessage}/>
                <Route path = "/players/:idPlayer" component = {playerDetails}/>
+               <Route to path = '/players/:idPlayer' component = {sendMessage}/>
                <Route exact path='/players' component = {GetAllPlayers}/>
 
            </div>

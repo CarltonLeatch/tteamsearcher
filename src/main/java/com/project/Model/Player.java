@@ -20,6 +20,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+//@NamedQuery(name = "Player.getAllPlayers", query = "SELECT p.idPlayer, p.username,p.password, p.email from Player p")
 public class Player {
 
     @Id

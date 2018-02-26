@@ -32,7 +32,6 @@ class getAllPlayers extends Component {
                 console.log(error)
             });
 
-
             this.interval = setInterval(() => {
                 fetch('http://localhost:8080/api/players')
                     .then(res => res.json())
@@ -71,7 +70,7 @@ class getAllPlayers extends Component {
 
                             <tr>
 
-                                <td class = "link"><Link class = "link" to ={'/players/' + p.idPlayer}>{p.idPlayer}</Link></td>
+                                <td class = "link"><Link class = "link" to ={'/players/' + p.idPlayer}>Wyświetl szczegóły</Link></td>
                                 <td>{p.username}</td>
                                 <td>{p.password}</td>
                             </tr>

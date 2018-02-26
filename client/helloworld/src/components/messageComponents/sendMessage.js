@@ -26,9 +26,7 @@ class sendMessage extends Component {
 
     render(){
         return(
-
-            <div class = "sendMessageContainer">
-                <br/>
+            <div class = "container">
                 <div class="form-group">
                     <label class = 'form-control-label col-sm-2' >message: </label> <div class = 'col-sm-10'> <input type = "text" ref = "message"/> </div>
                     <label class = 'form-control-label col-sm-2' >id: </label> <div class = 'col-sm-10'> <input type = "text" ref = "id"/>

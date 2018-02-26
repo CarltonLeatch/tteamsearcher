@@ -5,6 +5,8 @@ import {
     Link
 } from 'react-router-dom';
 
+import sendMessage from '../messageComponents/sendMessage';
+
 class playerDetails extends Component {
 
     constructor() {
@@ -12,7 +14,7 @@ class playerDetails extends Component {
         this.state = {
             products: [],
             messages: [],
-            games : []
+            games: []
         };
 
     }
@@ -55,10 +57,10 @@ class playerDetails extends Component {
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>id</th>
-                        <th scope="col">username</th>
-                        <th>password</th>
-
+                        <th>ID</th>
+                        <th scope="col">Username</th>
+                        <th>Password</th>
+                        <th>Email</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -71,54 +73,60 @@ class playerDetails extends Component {
                     <td>
                         {products.password}
                     </td>
+                    <td>
+                        {products.email}
+                    </td>
                     </tbody>
                 </table>
-                <div class = "row">
-                <div class="col-sm-6">
-                    <div class="table-responsive">
-                        <table class="table table-bordered">
-                            <thead>
-                            <tr>
-                                <th>Messages</th>
-                            </tr>
-                            </thead>
-                            <tbody>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Messages</th>
+                                </tr>
+                                </thead>
+                                <tbody>
 
-                            {this.state.messages.map(function (m) {
-                                return (
-                                    <tr>
-                                        <td class="col-sm-1">{m.message}</td>
-                                    </tr>
-                                )
-                            })}
-                            </tbody>
-                        </table>
-                    </div>
-                    </div>
-                    <div class = "col-sm-6">
-                    <div class="table-responsive">
-                        <table class="table table-bordered">
-                            <thead>
-                            <tr>
-                                <th>Games</th>
-                                <th>Acronim</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {this.state.games.map(function (g) {
-                            return (
-                            <tr>
-                            <td>{g.name}</td>
-                                <td>{g.acronim}</td>
-                            </tr>
-                            )
-                            })}
-                            </tbody>
-                        </table>
+                                {this.state.messages.map(function (m) {
+                                    return (
+                                        <tr>
+                                            <td class="col-sm-1">{m.message}</td>
+                                        </tr>
+                                    )
+                                })}
+                                </tbody>
+                            </table>
 
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Games</th>
+                                    <th>Acronim</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {this.state.games.map(function (g) {
+                                    return (
+                                        <tr>
+                                            <td>{g.name}</td>
+                                            <td>{g.acronim}</td>
+                                        </tr>
+                                    )
+                                })}
+                                </tbody>
+                            </table>
+
+                        </div>
                     </div>
                 </div>
-            </div>
+
+
             </div>
         );
     }
