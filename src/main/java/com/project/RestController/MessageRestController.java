@@ -1,7 +1,7 @@
 package com.project.RestController;
 
 
-import com.project.Model.Message;
+import com.project.Model.Comments;
 import com.project.Model.Player;
 import com.project.Repository.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,16 +19,16 @@ public class MessageRestController {
 
 
     @PostMapping("/{id}/add")
-    public Message saveMessage(@PathVariable Long id, @RequestBody Message message){
+    public Comments saveMessage(@PathVariable Long id, @RequestBody Comments comments){
         Player p = playerRepository.findOne(id);
-        p.getMessages().add(message);
+        p.getComments().add(comments);
         playerRepository.save(p);
-        return message;
+        return comments;
     }
 
     @GetMapping("/{id}/getAll")
-    public List<Message> getAllMessagesFromPlayer(@PathVariable Long id){
+    public List<Comments> getAllMessagesFromPlayer(@PathVariable Long id){
         Player p = playerRepository.findOne(id);
-        return p.getMessages();
+        return p.getComments();
     }
 }

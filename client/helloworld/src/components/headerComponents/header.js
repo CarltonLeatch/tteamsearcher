@@ -6,8 +6,10 @@ class Header extends Component{
     render(){
         return(
             <div class="fixed-top">
+                {/*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></link>*/}
                 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"></link>
                 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"></link>
+                <link href='https://fonts.googleapis.com/css?family=Alegreya Sans SC' rel='stylesheet'></link>
                     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
                     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
                 <header class="topbar">
@@ -39,8 +41,8 @@ class Header extends Component{
                             <ul class="navbar-nav ml-auto">
 
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="#">Home
-                                        <span class="sr-only">(current)</span>
+                                    <a class="nav-link" href="/">Home
+                                        {/*<span class="sr-only">(current)</span>*/}
                                     </a>
                                 </li>
 

@@ -16,7 +16,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Game {
+public class Teams {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,8 +27,4 @@ public class Game {
 
     @NotEmpty
     private String acronim;
-
-    @OneToMany
-    private List<Form> forms;
-
 }

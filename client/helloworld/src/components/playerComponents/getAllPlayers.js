@@ -50,10 +50,10 @@ class getAllPlayers extends Component {
     render(){
         return(
             <div class = "GameContainer">
-                <br/>
+                <br/><br/><br/><br/><br/>
                 <h3>Player List</h3>
-                <br/>
                 Product filter <input type = "text" class = "filter" placeholder="Search" ref = "filter" onChange={this.search}/>
+                <br/><br/>
                 <table class = "table">
                     <thead>
                     <tr>
@@ -70,9 +70,10 @@ class getAllPlayers extends Component {
 
                             <tr>
 
-                                <td class = "link"><Link class = "link" to ={'/players/' + p.idPlayer}>Wyświetl szczegóły</Link></td>
-                                <td>{p.username}</td>
+                                <td class = "flex-row">{p.idPlayer}</td>
+                                <td>{p.username}<br/>{p.email}</td>
                                 <td>{p.password}</td>
+                                <td><Link class = "link" to ={'/players/' + p.idPlayer}>Wyświetl szczegóły</Link></td>
                             </tr>
 
                         )

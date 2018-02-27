@@ -1,10 +1,9 @@
 package com.project.Controller;
 
-import com.project.Model.Game;
+import com.project.Model.Teams;
 import com.project.Repository.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -28,11 +27,11 @@ public class GameController {
     }
 
     @PostMapping("/save")
-    public String saveNewGame(@ModelAttribute("Ngame") @Validated Game game, BindingResult br) {
+    public String saveNewGame(@ModelAttribute("Ngame") @Validated Teams teams, BindingResult br) {
         if (br.hasErrors()) {
             return "hello";
         } else {
-            gameRepository.save(game);
+            gameRepository.save(teams);
         }
         return "hello";
     }

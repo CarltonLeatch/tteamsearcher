@@ -30,6 +30,7 @@ class SendPlayer extends Component {
         return(
 
             <div class = "AddPlayerContainer">
+                <br/><br/><br/>
                 <br/>
                 <div class="form-group">
                     <label class = 'form-control-label col-sm-2' >username: </label> <div class = 'col-sm-10'> <input type = "text" ref = "username"/> </div>

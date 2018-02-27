@@ -5,7 +5,8 @@ import {
     Link
 } from 'react-router-dom';
 
-import sendMessage from '../messageComponents/sendMessage';
+import SendMessage from "./SendMessage";
+import SaveTeam from "./SaveTeam"
 
 class playerDetails extends Component {
 
@@ -13,8 +14,8 @@ class playerDetails extends Component {
         super();
         this.state = {
             products: [],
-            messages: [],
-            games: []
+            comments: [],
+            teams: []
         };
 
     }
@@ -28,8 +29,8 @@ class playerDetails extends Component {
             .then(res => {
                 this.setState({
                     products: res,
-                    messages: res.messages,
-                    games: res.games
+                    comments: res.comments,
+                    teams: res.teams
                 });
             })
             .catch(error => {
@@ -41,55 +42,49 @@ class playerDetails extends Component {
 
     render() {
         let products = this.state.products;
-        let messages = this.state.messages;
-        let games = this.state.games;
-        //alert(messages);
-        // let messages = this.state.products.messages;
         return (
 
 
             <div class="container-fluid">
-                <br/>
-                <h3>Player List</h3>
-                <br/>
+                <br/><br/><br/><br/>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="well well-sm">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-4">
+                                        AVATAR
+                                    </div>
+                                    <div class="col-sm-6 col-md-8">
+                                        <h4>
+                                            {products.username}</h4>
+                                        {/*<small><cite title="San Francisco, USA">San Francisco, USA <i class="glyphicon glyphicon-map-marker">*/}
+                                        {/*</i></cite></small>*/}
+                                        <p>
+                                            <i class="fa fa-envelope"></i> {products.email}
+                                            <br />
+                                            <br />
+                                            {/*<i class="glyphicon glyphicon-gift"></i>June 02, 1988</p>*/}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th scope="col">Username</th>
-                        <th>Password</th>
-                        <th>Email</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <td>
-                        {products.idPlayer}
-                    </td>
-                    <td>
-                        {products.username}
-                    </td>
-                    <td>
-                        {products.password}
-                    </td>
-                    <td>
-                        {products.email}
-                    </td>
-                    </tbody>
-                </table>
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="table-responsive">
                             <table class="table table-bordered">
                                 <thead>
                                 <tr>
-                                    <th>Messages</th>
+                                    <th>Comments</th>
                                 </tr>
                                 </thead>
                                 <tbody>
 
-                                {this.state.messages.map(function (m) {
+                                {this.state.comments.map(function (m) {
                                     return (
                                         <tr>
                                             <td class="col-sm-1">{m.message}</td>
@@ -98,7 +93,7 @@ class playerDetails extends Component {
                                 })}
                                 </tbody>
                             </table>
-
+                            <SendMessage sendPlayerId={products.idPlayer}/>
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -106,12 +101,12 @@ class playerDetails extends Component {
                             <table class="table table-bordered">
                                 <thead>
                                 <tr>
-                                    <th>Games</th>
-                                    <th>Acronim</th>
+                                    <th>Teams</th>
+                                    <th>Shortscut</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {this.state.games.map(function (g) {
+                                {this.state.teams.map(function (g) {
                                     return (
                                         <tr>
                                             <td>{g.name}</td>
@@ -123,6 +118,7 @@ class playerDetails extends Component {
                             </table>
 
                         </div>
+                        <SaveTeam sendPlayerId={products.idPlayer}/>
                     </div>
                 </div>
 

@@ -1,7 +1,7 @@
 package com.project.RestController;
 
 
-import com.project.Model.Game;
+import com.project.Model.Teams;
 import com.project.Model.Player;
 import com.project.Repository.GameRepository;
 import com.project.Repository.PlayerRepository;
@@ -27,10 +27,10 @@ public class GameRestController {
 
     @PostMapping("/{id}/add")
     @ResponseStatus(HttpStatus.CREATED)
-    public Game create(@PathVariable Long id,@RequestBody Game game){
+    public Teams create(@PathVariable Long id, @RequestBody Teams teams){
         Player p = playerRepository.findOne(id);
-        p.getGames().add(game);
+        p.getTeams().add(teams);
         playerRepository.save(p);
-        return game;
+        return teams;
     }
 }

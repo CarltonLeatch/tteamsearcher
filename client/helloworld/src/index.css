@@ -1,8 +1,8 @@
 body {
   margin: 0;
-  font-family: BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif !important;
-    font-size: 1rem;
-    font-weight: 400;
+  font-family: 'Alegreya Sans SC' !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
   line-height: 1.5;
   color: #212529;
   background-color: #f7f7f7;
@@ -164,4 +164,12 @@ li {
   background: -webkit-linear-gradient(45deg, #54d400 48%, #1b1e21 48%);
   background: -webkit-linear-gradient(left, #54d400 48%, #1b1e21 48%);
   background: linear-gradient(45deg, #54d400 48%, #1b1e21 48%);
+}
+
+.glyphicon {  margin-bottom: 10px;margin-right: 10px;}
+
+small {
+  display: block;
+  line-height: 1.428571429;
+  color: #999;
 }

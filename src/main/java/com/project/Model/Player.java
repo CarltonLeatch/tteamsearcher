@@ -1,15 +1,10 @@
 package com.project.Model;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import net.minidev.json.annotate.JsonIgnore;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
@@ -20,7 +15,6 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-//@NamedQuery(name = "Player.getAllPlayers", query = "SELECT p.idPlayer, p.username,p.password, p.email from Player p")
 public class Player {
 
     @Id
@@ -37,12 +31,9 @@ public class Player {
     @NotEmpty
     private String email;
 
-    //@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToMany(cascade = CascadeType.ALL)
-    private List<Game> games;
+    private List<Teams> teams;
 
-
-   // @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @ManyToMany(cascade = CascadeType.ALL)
-    private List<Message> messages;
+    private List<Comments> comments;
 }
