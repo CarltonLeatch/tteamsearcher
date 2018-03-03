@@ -23,8 +23,8 @@ public class PlayerRestController {
 
     @GetMapping("/filter")
     public Collection<Player> getOne(@RequestParam(value = "username", required = false)String username,
-        @RequestParam(value = "password", required = false)String password){
-        if(password.isEmpty())
+                                     @RequestParam(value = "password", required = false)String password){
+        if(!username.equalsIgnoreCase("") )
             return playerRepository.findPlayerByUsername(username);
         else
             return playerRepository.findPlayerByUsernameOrPassword(username,password);
