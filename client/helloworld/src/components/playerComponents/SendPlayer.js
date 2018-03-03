@@ -1,43 +1,66 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 
 class SendPlayer extends Component {
 
-    post(){
+    post() {
         var username = this.refs.username.value;
         var password = this.refs.password.value;
         var email = this.refs.email.value;
-        fetch('http://localhost:8080/api/players',{
-            method : 'POST',
-            body: JSON.stringify({
-                username: username,
-                password: password,
-                email: email
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(res=>{
-            this.componentDidMount();
-            return res;
-        }).catch(err=>err);
+        var passwordconf = this.refs.passwordconf.value;
+        if (password == passwordconf)
+            fetch('http://localhost:8080/api/players', {
+                method: 'POST',
+                body: JSON.stringify({
+                    username: username,
+                    password: password,
+                    email: email
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(res => {
+                this.componentDidMount();
+                return res;
+            }).catch(err => err);
 
 
     }
 
 
-    render(){
-        return(
+    render() {
+        return (
+            <div class="container"><br/><br/><br/><br/><br/>
+                <div class="row">
+                    <form role="form" class="col-md-9 go-right">
+                        <h2>Register form.</h2>
+                        <p>Trust in our product</p>
+                        <div class="form-group">
+                            <input placeholder="username" id="name" name="name" ref="username" type="text"
+                                   class="form-control" required/>
+                            <label for="name">username</label>
+                        </div>
+                        <div class="form-group">
+                            <input placeholder="password" id="phone" name="phone" ref="password" type="tel"
+                                   class="form-control" required/>
+                            <label for="phone">Password</label>
+                        </div>
+                        <div class="form-group">
+                            <input placeholder="Confirm Password" id="phone" name="phone" ref="passwordconf" type="tel"
+                                   class="form-control" required/>
+                            <label for="phone">Confirm Password</label>
+                        </div>
+                        <div class="form-group">
+                            <input placeholder="email" id="message" name="phone" ref="email" class="form-control"
+                                   required/>
+                            <label for="message">email</label>
+                        </div>
 
-            <div class = "AddPlayerContainer">
-                <br/><br/><br/>
-                <br/>
-                <div class="form-group">
-                    <label class = 'form-control-label col-sm-2' >username: </label> <div class = 'col-sm-10'> <input type = "text" ref = "username"/> </div>
-                    <label class = 'form-control-label col-sm-2' >password </label><div class = 'col-sm-10'><input type = "text" ref = "password"/></div>
-                    <label class = 'form-control-label col-sm-2' >email </label> <div class = 'col-sm-10'><input type = "text" ref = "email"/> </div>
-                <br/>
-                    <div class = 'col-sm-10'><input class = "btn-danger" type = "button" value = "Dodaj" onClick={this.post.bind(this)} /></div>
+                        <button type="button" class="btn btn-labeled btn-success" onClick={this.post.bind(this)}>
+                            <span class="btn-label"></span>Submit
+                        </button>
+
+                    </form>
                 </div>
             </div>
         );

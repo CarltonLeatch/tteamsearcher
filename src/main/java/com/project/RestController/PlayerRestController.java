@@ -11,20 +11,24 @@ import java.util.Collection;
 
 @CrossOrigin(origins = {"http://localhost:3000","http://localhost:8080"})
 @RestController
-@RequestMapping("/api/players")
+@RequestMapping("api/players")
 @ResponseBody
 public class PlayerRestController {
 
     @Autowired
     private PlayerRepository playerRepository;
 
-
     @GetMapping
     public Collection<PlayerSummary> getAll(){ return playerRepository.getAllPlayers(); }
 
-    @GetMapping("/{idPlayer}")
-    public Player getOne(@PathVariable("idPlayer")Long id){
-        return playerRepository.findOne(id);
+    @GetMapping("/filter")
+    public Collection<Player> getOne(@RequestParam(value = "username", required = false)String username,
+        @RequestParam(value = "password", required = false)String password){
+        if(password.isEmpty())
+            return playerRepository.findPlayerByUsername(username);
+        else
+            return playerRepository.findPlayerByUsernameOrPassword(username,password);
+
     }
 
     @PostMapping
@@ -32,5 +36,11 @@ public class PlayerRestController {
         return playerRepository.save(player);
     }
 
-
+    @GetMapping("/{idPlayer}")
+    public Player getOne(@PathVariable("idPlayer")Long id){
+        return playerRepository.findOne(id);
+    }
+//    @RequestMapping
+//    public Player getByUsername(@RequestParam("username") String username){
+//        return playerRepository.findPlayerByUsername(username);}
 }

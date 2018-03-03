@@ -36,8 +36,6 @@ class playerDetails extends Component {
             .catch(error => {
                 console.log(error)
             });
-
-
     }
 
     render() {
@@ -58,8 +56,6 @@ class playerDetails extends Component {
                                     <div class="col-sm-6 col-md-8">
                                         <h4>
                                             {products.username}</h4>
-                                        {/*<small><cite title="San Francisco, USA">San Francisco, USA <i class="glyphicon glyphicon-map-marker">*/}
-                                        {/*</i></cite></small>*/}
                                         <p>
                                             <i class="fa fa-envelope"></i> {products.email}
                                             <br />
@@ -93,8 +89,8 @@ class playerDetails extends Component {
                                 })}
                                 </tbody>
                             </table>
-                            <SendMessage sendPlayerId={products.idPlayer}/>
                         </div>
+                        <SendMessage sendPlayerId={products.idPlayer}/>
                     </div>
                     <div class="col-sm-6">
                         <div class="table-responsive">
@@ -118,7 +114,7 @@ class playerDetails extends Component {
                             </table>
 
                         </div>
-                        <SaveTeam sendPlayerId={products.idPlayer}/>
+                        <SaveTeam sendPlayerId={products.idPlayer} />
                     </div>
                 </div>
 

@@ -1,9 +1,9 @@
 package com.project.Repository;
 
-import com.project.Model.Teams;
+import com.project.Model.Comments;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface GameRepository extends PagingAndSortingRepository<Teams, Long> {
+public interface CommentRepository extends PagingAndSortingRepository<Comments, Long> {
 }

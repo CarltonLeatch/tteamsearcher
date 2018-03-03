@@ -4,8 +4,6 @@ import {
     Route,
     Link
 } from 'react-router-dom';
-import playerDetails from "./playerDetails";
-
 
 class getAllPlayers extends Component {
 

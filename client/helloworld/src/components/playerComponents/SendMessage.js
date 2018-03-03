@@ -30,16 +30,16 @@ class SendMessage extends Component {
 
     render() {
         return(
-        <div class="container">
-            <div class="form-group">
-                <label class='form-control-label col-sm-2'>message: </label>
-                <div class='col-sm-10'><input type="text" ref="message"/></div>
-                {/*<hidden type="text" ref="id" value={this.props.sendPlayerId}/>*/}
+            <form role="form" class="col-md-9 go-right">
+                <div class="form-group">
+                    <input placeholder="message" id="name" name="name" ref = "message" type="text" class="form-control" required />
+                    <label for="name">message</label>
+                </div>
+                <button type="button" class="btn btn-labeled btn-success" onClick={this.post.bind(this)}>
+                    <span class="btn-label"></span>Submit
+                </button>
+            </form>
 
-                <div class='col-sm-10'><input class="btn-danger" type="button" value="Dodaj"
-                                              onClick={this.post.bind(this)}/></div>
-            </div>
-        </div>
     );
 }
 }

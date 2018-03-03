@@ -1,7 +1,7 @@
 package com.project.Controller;
 
 import com.project.Model.Teams;
-import com.project.Repository.GameRepository;
+import com.project.Repository.TeamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class GameController {
 
     @Autowired
-    private GameRepository gameRepository;
+    private TeamRepository teamRepository;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index() {
@@ -31,7 +31,7 @@ public class GameController {
         if (br.hasErrors()) {
             return "hello";
         } else {
-            gameRepository.save(teams);
+            teamRepository.save(teams);
         }
         return "hello";
     }
