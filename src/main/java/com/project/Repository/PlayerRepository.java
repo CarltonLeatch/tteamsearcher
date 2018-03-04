@@ -1,7 +1,7 @@
 package com.project.Repository;
 
         import com.project.Model.Player;
-        import com.project.Model.PlayerSummary;
+        import com.project.Model.Summary.PlayerSummary;
         import org.springframework.data.jpa.repository.JpaRepository;
         import org.springframework.data.jpa.repository.Query;
         import org.springframework.stereotype.Repository;

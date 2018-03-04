@@ -36,7 +36,7 @@ class SendMessage extends Component {
                     <label for="name">message</label>
                 </div>
                 <button type="button" class="btn btn-labeled btn-success" onClick={this.post.bind(this)}>
-                    <span class="btn-label"></span>Submit
+                    <span class="btn-label"></span>Comment
                 </button>
             </form>
 

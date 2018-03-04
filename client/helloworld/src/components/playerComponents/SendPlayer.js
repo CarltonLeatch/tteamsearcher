@@ -38,26 +38,26 @@ class SendPlayer extends Component {
                         <div class="form-group">
                             <input placeholder="username" id="name" name="name" ref="username" type="text"
                                    class="form-control" required/>
-                            <label for="name">username</label>
+                            <label for="name">Username</label>
                         </div>
                         <div class="form-group">
-                            <input placeholder="password" id="phone" name="phone" ref="password" type="tel"
+                            <input placeholder="password" id="phone" name="phone" ref="password" type="password"
                                    class="form-control" required/>
                             <label for="phone">Password</label>
                         </div>
                         <div class="form-group">
-                            <input placeholder="Confirm Password" id="phone" name="phone" ref="passwordconf" type="tel"
+                            <input placeholder="Confirm Password" id="phone" name="phone" ref="passwordconf" type="password"
                                    class="form-control" required/>
                             <label for="phone">Confirm Password</label>
                         </div>
                         <div class="form-group">
-                            <input placeholder="email" id="message" name="phone" ref="email" class="form-control"
+                            <input placeholder="email" id="message" name="phone" ref="email" type ="email" class="form-control"
                                    required/>
                             <label for="message">email</label>
                         </div>
 
                         <button type="button" class="btn btn-labeled btn-success" onClick={this.post.bind(this)}>
-                            <span class="btn-label"></span>Submit
+                            <span class="btn-label"></span>Register
                         </button>
 
                     </form>

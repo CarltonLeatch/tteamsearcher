@@ -1,6 +1,7 @@
 package com.project.Model;
 
 
+import com.project.Model.GameAccount.LOL.LolAccount;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -36,4 +37,7 @@ public class Player {
 
     @ManyToMany(cascade = CascadeType.ALL)
     private List<Comments> comments;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private LolAccount lolAccount;
 }

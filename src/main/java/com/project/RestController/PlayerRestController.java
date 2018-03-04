@@ -1,7 +1,7 @@
 package com.project.RestController;
 
 import com.project.Model.Player;
-import com.project.Model.PlayerSummary;
+import com.project.Model.Summary.PlayerSummary;
 import com.project.Repository.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -40,7 +40,4 @@ public class PlayerRestController {
     public Player getOne(@PathVariable("idPlayer")Long id){
         return playerRepository.findOne(id);
     }
-//    @RequestMapping
-//    public Player getByUsername(@RequestParam("username") String username){
-//        return playerRepository.findPlayerByUsername(username);}
 }
