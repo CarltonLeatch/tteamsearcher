@@ -15,22 +15,20 @@ class playerDetails extends Component {
         this.state = {
             products: [],
             comments: [],
-            teams: []
+            teams: [],
+            lolAccount: []
         };
-
     }
 
     componentDidMount() {
-
-        // console.log(this.props.params.idPlayer);
-
         fetch('http://localhost:8080/api' + this.props.location.pathname)
             .then(res => res.json())
             .then(res => {
                 this.setState({
                     products: res,
                     comments: res.comments,
-                    teams: res.teams
+                    teams: res.teams,
+                    lolAccount : res.lolAccount
                 });
             })
             .catch(error => {
@@ -40,9 +38,21 @@ class playerDetails extends Component {
 
     render() {
         let products = this.state.products;
+        let lolAccount = this.state.lolAccount;
+        let lolAccountRender;
+        if(lolAccount){
+            lolAccountRender = (
+                <div class="col-sm-2 col-md-4">
+                    <blockquote>
+                        <p>{lolAccount.username} <small>{lolAccount.level}</small> </p>
+                    </blockquote>
+                    <p>  {lolAccount.division}
+                        <br/>{lolAccount.position}
+                        </p>
+                </div>
+            )
+        }
         return (
-
-
             <div class="container-fluid">
                 <br/><br/><br/><br/>
                 <div class="container">
@@ -59,6 +69,7 @@ class playerDetails extends Component {
                                         <p>
                                             <i class="fa fa-envelope"></i> {products.email}
                                             <br />
+                                            {lolAccountRender}
                                             <br />
                                             {/*<i class="glyphicon glyphicon-gift"></i>June 02, 1988</p>*/}
                                         </p>
@@ -68,7 +79,6 @@ class playerDetails extends Component {
                         </div>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="table-responsive">
@@ -79,7 +89,6 @@ class playerDetails extends Component {
                                 </tr>
                                 </thead>
                                 <tbody>
-
                                 {this.state.comments.map(function (m) {
                                     return (
                                         <tr>
@@ -112,13 +121,10 @@ class playerDetails extends Component {
                                 })}
                                 </tbody>
                             </table>
-
                         </div>
                         <SaveTeam sendPlayerId={products.idPlayer} />
                     </div>
                 </div>
-
-
             </div>
         );
     }

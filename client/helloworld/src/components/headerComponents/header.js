@@ -45,7 +45,9 @@ class Header extends Component{
                                         {/*<span class="sr-only">(current)</span>*/}
                                     </a>
                                 </li>
-
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/register">Register</a>
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/players">Show all players</a>
                                 </li>
