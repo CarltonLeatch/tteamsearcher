@@ -27,6 +27,15 @@ public class LOLAccountRestController {
 
     @GetMapping("/all")
     public List<LolAccount> getAll(){
+        Long id = Long.valueOf(1);
+        Player p = playerRepository.getOne(id);
+        LolAccount lol = new LolAccount();
+        lol.setDivision(LoLDivisionEnum.BRONZE);
+        lol.setPosition(LoLPositionEnum.BOTTOM);
+        lol.setLevel(55);
+        lol.setUsername("xDDDDDD");
+        p.setLolAccount(lol);
+        playerRepository.save(p);
         return lolAccountRepository.findAll(); }
 
 }

@@ -23,7 +23,7 @@ class Player extends Component {
           <Router history = {history}>
            <div class = "App">
                <Header/>
-               <div class = "container">
+               <div class = "container sss">
                <Route exact path='/register' component = {SendPlayer}/>
                <Route path = "/players/:idPlayer" component = {playerDetails}/>
                <Route exact path='/players' component = {GetAllPlayers}/>

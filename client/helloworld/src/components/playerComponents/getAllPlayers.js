@@ -17,6 +17,8 @@ class getAllPlayers extends Component {
 
     }
 
+
+
     componentDidMount() {
 
         fetch('http://localhost:8080/api/players')
@@ -48,7 +50,7 @@ class getAllPlayers extends Component {
     render(){
         return(
             <div class = "GameContainer">
-                <br/><br/><br/><br/><br/>
+
                 <h3>Player List</h3>
                 Product filter <input type = "text" class = "filter" placeholder="Search" ref = "filter" onChange={this.search}/>
                 <br/><br/>

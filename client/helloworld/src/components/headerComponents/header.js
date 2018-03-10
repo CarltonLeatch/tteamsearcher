@@ -46,10 +46,11 @@ class Header extends Component{
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/register">Register</a>
+                                    <Link class = "nav-link" to ="/register">Register</Link>
+                                    {/*<a class="nav-link" href="/register">Register</a>*/}
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/players">Show all players</a>
+                                    <Link class = "nav-link" to = "/players">All Players</Link>
                                 </li>
 
                                 <li class="nav-item">
