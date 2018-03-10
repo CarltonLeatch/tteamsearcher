@@ -4,7 +4,7 @@ import {
     Route,
     Link
 } from 'react-router-dom';
-
+import {AnimatedRoute} from 'react-router-transition'
 import history from './components/browserHistory/browserHistory';
 
 import './static/css/bootstrap.min.css'
@@ -23,11 +23,35 @@ class Player extends Component {
           <Router history = {history}>
            <div class = "App">
                <Header/>
-               <div class = "container sss">
-               <Route exact path='/register' component = {SendPlayer}/>
-               <Route path = "/players/:idPlayer" component = {playerDetails}/>
-               <Route exact path='/players' component = {GetAllPlayers}/>
+
+                   <div class = "container sss">
+               <AnimatedRoute exact path='/register' component = {SendPlayer}
+                              atEnter={{ offset: 100 }}
+                              atLeave={{ offset: -100 }}
+                              atActive={{ offset: 0 }}
+                              runOnMount={true}
+                              mapStyles={(styles) => ({
+                                  transform: `translateX(${styles.offset}%)`,
+                              })}/>
+               <AnimatedRoute path = "/players/:idPlayer" component = {playerDetails}
+                      atEnter={{ offset: 100 }}
+                      atLeave={{ offset: -100 }}
+                      atActive={{ offset: 0 }}
+                      runOnMount={true}
+                      mapStyles={(styles) => ({
+                          transform: `translateX(${styles.offset}%)`,
+                      })}/>
+               <AnimatedRoute exact path='/players' component = {GetAllPlayers}
+                      atEnter={{ offset: 100 }}
+                      atLeave={{ offset: -100 }}
+                      runOnMount={true}
+                      atActive={{ offset: 0 }}
+                      mapStyles={(styles) => ({
+                          transform: `translateX(${styles.offset}%)`,
+                      })}/>
                </div>
+
+
            </div>
           </Router>
        );

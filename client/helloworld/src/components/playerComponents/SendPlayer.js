@@ -30,7 +30,7 @@ class SendPlayer extends Component {
 
     render() {
         return (
-            <div class="container"><br/><br/><br/><br/><br/>
+            <div class="container">
                 <div class="row">
                     <form role="form" class="col-md-9 go-right">
                         <h2>Register form.</h2>

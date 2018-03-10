@@ -54,7 +54,6 @@ class playerDetails extends Component {
         }
         return (
             <div class="container-fluid">
-                <br/><br/><br/><br/>
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-6">

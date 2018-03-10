@@ -19,7 +19,7 @@ class getAllPlayers extends Component {
 
 
 
-    componentDidMount() {
+    componentWillMount() {
 
         fetch('http://localhost:8080/api/players')
             .then(res => res.json())

@@ -31,18 +31,17 @@ class SaveTeam extends Component {
         return (
 
             <div class="sendMessageContainer">
-                <br/>
                 <div class="form-group">
                     <label class='form-control-label col-sm-2'>name: </label>
                     <div class='col-sm-10'><input type="text" ref="name"/><br/>
                         <label class='form-control-label col-sm-2'>acronim: </label>
                         <div class='col-sm-10'><input type="text" ref="acronim"/><br/>
-                        </div>
                         <br/>
                         <div class='col-sm-10'><input class="btn-danger" type="button" value="Dodaj"
                                                       onClick={this.post.bind(this)}/></div>
                     </div>
                 </div>
+            </div>
             </div>
         );
     }

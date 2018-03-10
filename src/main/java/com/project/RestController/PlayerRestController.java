@@ -3,13 +3,15 @@ package com.project.RestController;
 import com.project.Model.Player;
 import com.project.Model.Summary.PlayerSummary;
 import com.project.Repository.PlayerRepository;
+import javafx.collections.transformation.SortedList;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
 
-@CrossOrigin(origins = {"http://localhost:3000","http://localhost:8080"})
+@CrossOrigin(origins = {"http://localhost:3000","http://localhost:8080" ,"*"})
 @RestController
 @RequestMapping("api/players")
 @ResponseBody

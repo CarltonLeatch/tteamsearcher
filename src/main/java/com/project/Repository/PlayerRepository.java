@@ -10,7 +10,7 @@ package com.project.Repository;
 @Repository
 public interface PlayerRepository extends JpaRepository<Player, Long> {
 
-        @Query(value = "SELECT p.email,p.id_Player,p.password,p.username FROM Player p", name = "getAllPlayers", nativeQuery = true)
+        @Query(value = "SELECT p.email,p.id_Player,p.password,p.username FROM Player p ORDER BY p.id_player ", name = "getAllPlayers", nativeQuery = true)
         Collection<PlayerSummary> getAllPlayers();
 
         Collection<Player> findPlayerByUsername(String username);

@@ -32,7 +32,7 @@ public class Player {
     @NotEmpty
     private String email;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<Teams> teams;
 
     @ManyToMany(cascade = CascadeType.ALL)
