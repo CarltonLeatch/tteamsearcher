@@ -18,6 +18,18 @@ class playerDetails extends Component {
             teams: [],
             lolAccount: []
         };
+        this.getData = this.getData.bind(this);
+    }
+
+   getData(message){
+       let newMessage = {
+           message : message
+       }
+        var newArr = this.state.comments.slice();
+        newArr.push(newMessage);
+        this.setState({
+           comments : newArr
+       })
     }
 
     componentDidMount() {
@@ -70,7 +82,6 @@ class playerDetails extends Component {
                                             <br />
                                             {lolAccountRender}
                                             <br />
-                                            {/*<i class="glyphicon glyphicon-gift"></i>June 02, 1988</p>*/}
                                         </p>
                                     </div>
                                 </div>
@@ -98,7 +109,7 @@ class playerDetails extends Component {
                                 </tbody>
                             </table>
                         </div>
-                        <SendMessage sendPlayerId={products.idPlayer}/>
+                        <SendMessage sendPlayerId={products.idPlayer} onPostHandler={this.getData}/>
                     </div>
                     <div class="col-sm-6">
                         <div class="table-responsive">

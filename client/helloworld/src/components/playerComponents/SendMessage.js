@@ -12,6 +12,7 @@ class SendMessage extends Component {
     post() {
         var id = this.props.sendPlayerId;
         var message = this.refs.message.value;
+        this.onPostHandler(message,id);
         fetch('http://localhost:8080/api/message/' + id + "/add", {
             method: 'POST',
             body: JSON.stringify({
@@ -23,8 +24,10 @@ class SendMessage extends Component {
         }).then(res => {
             return res;
         }).catch(err => console.log(err));
+    }
 
-
+    onPostHandler(message) {
+        this.props.onPostHandler(message);            
     }
 
 
@@ -39,7 +42,6 @@ class SendMessage extends Component {
                     <span class="btn-label"></span>Comment
                 </button>
             </form>
-
     );
 }
 }
