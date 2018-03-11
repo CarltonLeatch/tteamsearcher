@@ -50,8 +50,6 @@ class Player extends Component {
                           transform: `translateX(${styles.offset}%)`,
                       })}/>
                </div>
-
-
            </div>
           </Router>
        );
