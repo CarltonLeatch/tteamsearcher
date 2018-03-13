@@ -260,11 +260,3 @@ form.go-right input:focus + label, form.go-right textarea:focus + label {
   width: 40%;
   padding-top: 5px;
 }
-
-.animated-page-wrapper {
-  position: absolute;
-  top: 62px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}

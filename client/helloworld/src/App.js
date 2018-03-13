@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
     BrowserRouter as Router,
     Route,
-    Link
+    Link,
+    Switch
 } from 'react-router-dom';
 import {AnimatedRoute} from 'react-router-transition'
 import history from './components/browserHistory/browserHistory';
-
+import TransitionGroup from "react-transition-group/TransitionGroup";
 import './static/css/bootstrap.min.css'
 
 
@@ -15,23 +16,22 @@ import Header from './components/headerComponents/header';
 import GetAllPlayers from './components/playerComponents/getAllPlayers';
 import SendPlayer from './components/playerComponents/SendPlayer';
 import playerDetails from "./components/playerComponents/playerDetails";
-
+import LoginPlayer from "./components/playerComponents/LoginPlayer";
 class Player extends Component {
 
-    render(){
-       return(
-          <Router history = {history}>
-           <div class = "App">
-               <Header/>
-
-                   <div class = "container sss">
+    render() {
+        return (
+            <Router history={history}>
+                <div class="App">
+                    <Header/>       
+                        <div class = "container sss">
                <AnimatedRoute exact path='/register' component = {SendPlayer}
                               atEnter={{ offset: 100 }}
                               atLeave={{ offset: -100 }}
                               atActive={{ offset: 0 }}
                               runOnMount={true}
                               mapStyles={(styles) => ({
-                                  transform: `translateX(${styles.offset}%)`,
+                                transform: `translateX(${styles.offset}%)`,
                               })}/>
                <AnimatedRoute path = "/players/:idPlayer" component = {playerDetails}
                       atEnter={{ offset: 100 }}
@@ -48,11 +48,22 @@ class Player extends Component {
                       atActive={{ offset: 0 }}
                       mapStyles={(styles) => ({
                           transform: `translateX(${styles.offset}%)`,
-                      })}/>
-               </div>
-           </div>
-          </Router>
-       );
-   }
-}
-export default Player;
+                      })}/> 
+                       
+                        <AnimatedRoute exact path='/login' component = {LoginPlayer}
+                      atEnter={{ offset: 100 }}
+                      atLeave={{ offset: -100 }}
+                      runOnMount={true}
+                      atActive={{ offset: 0 }}
+                      mapStyles={(styles) => ({
+                          transform: `translateX(${styles.offset}%)`,
+                      })}/> 
+                        </div>
+
+                            </div>
+                            </Router>
+                            );
+                            }
+                    }
+                    export default Player;
+                    //translateX(${styles.offset}%)

@@ -17,4 +17,6 @@ public interface PlayerRepository extends JpaRepository<Player, Long> {
 
         Collection<Player> findPlayerByUsernameOrPassword(String username, String password);
 
+        Collection<Player> findPlayerByUsernameAndPassword(String username, String Password);
+
 }

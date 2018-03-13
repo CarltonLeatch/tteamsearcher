@@ -48,6 +48,9 @@ class Header extends Component {
                                     <Link class = "nav-link" to = "/">Homepage</Link>
                                 </li>
                                 <li class="nav-item">
+                                    <Link class = "nav-link" to = "/login">Login</Link>
+                                </li>
+                                <li class="nav-item">
                                     <Link class = "nav-link" to ="/register">Register</Link>
                                     {/*<a class="nav-link" href="/register">Register</a>*/}
                                 </li>
